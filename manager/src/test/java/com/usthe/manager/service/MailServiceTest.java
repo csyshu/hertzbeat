@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.lenient;
+import static org.mockito.Mockito.when;
 
 /**
  * Test case for {@link MailService}
@@ -45,7 +45,7 @@ class MailServiceTest {
 
     @BeforeEach
     void setUp() {
-        lenient().when(templateEngine.process(eq("mailAlarm"), any(Context.class))).thenReturn("result");
+        when(templateEngine.process(eq("mailAlarm"), any(Context.class))).thenReturn("result");
     }
 
     @Test
